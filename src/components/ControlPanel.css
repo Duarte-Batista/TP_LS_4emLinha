@@ -1,0 +1,156 @@
+.control-panel {
+    font-family: 'Share Tech Mono', monospace;
+    background-color: #fff;
+    border: 2px solid #ff4d4d;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.player-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.player-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.player-section.active-player {
+    border-width: 3px;
+    padding: 9px;
+}
+
+.player-section.active-player:has(.player-circle.p1) {
+    border-color: var(--p1, yellow);
+}
+
+.player-section.active-player:has(.player-circle.p2) {
+    border-color: var(--p2, red);
+}
+
+.player-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.player-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    margin-bottom: 5px;
+}
+
+.player-circle.p1 {
+    background-color: var(--p1, yellow);
+}
+
+.player-circle.p2 {
+    background-color: var(--p2, red);
+}
+
+.score-container {
+    display: flex;
+    justify-content: center;
+    flex: 0 0 auto;
+}
+
+.score {
+    font-size: 3rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ff4d4d;
+    background-color: #000;
+    width: 200px;
+    height: 100px;
+    border-radius: 10px;
+    text-align: center;
+    text-shadow: 0 0 15px #ff4d4d, 0 0 30px #ff4d4d, 0 0 45px #ff0000;
+    box-shadow: 0 0 15px #ff4d4d, inset 0 0 15px #ff0000;
+    animation: led-glow 1.5s ease-in-out infinite alternate;
+}
+
+.score span {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes led-glow {
+    from {
+        box-shadow: 0 0 7px #ff4d4d, inset 0 0 7px #ff0000;
+        text-shadow: 0 0 7px #ff4d4d, 0 0 15px #ff0000;
+    }
+
+    to {
+        box-shadow: 0 0 30px #ff4d4d, inset 0 0 30px #ff0000;
+        text-shadow: 0 0 30px #ff4d4d, 0 0 60px #ff0000;
+    }
+}
+
+.controls-row {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.controls-container {
+    display: flex;
+    justify-content: center;
+}
+
+.controls-container select {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+    cursor: pointer;
+}
+
+.status-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status-item {
+    flex: 1;
+    text-align: center;
+}
+
+.status-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.status-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.status-button:hover:not(:disabled) {
+    background-color: #218838;
+}

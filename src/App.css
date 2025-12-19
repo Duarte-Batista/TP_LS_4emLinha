@@ -1,0 +1,175 @@
+:root {
+    --size: 100px;
+    --p1: yellow;
+    --p2: red;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    position: relative;
+    background: linear-gradient(#555, rgba(0, 0, 0, 0.1)) fixed;
+    min-height: 100vh;
+}
+
+.game-wrapper {
+    border-radius: 15px;
+    transition: filter 0.3s ease;
+    width: 800px;
+}
+
+.game-wrapper.blurred {
+    filter: blur(5px) brightness(0.5);
+}
+
+.game-box {
+    height: 1150px;
+    background-color: #ffffff; 
+    border: 3px solid #ff4d4d; 
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.header-text span {
+    font-family: 'Share Tech Mono', monospace;
+    font-weight: bold;
+    font-size: 2rem;
+    color: #e70101;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal {
+    background-color: #fff;
+    border: 2px solid #ff4d4d;
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal input {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modal input:disabled {
+    background-color: #f0f0f0;
+    cursor: not-allowed;
+}
+
+.modal button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.modal button:hover {
+    background-color: #218838;
+}
+
+.modal button:last-child {
+    background-color: #dc3545;
+}
+
+.modal button:last-child:hover {
+    background-color: #c82333;
+}
+
+.game-container {
+    margin-left: 16px;
+    position: relative;
+    width: calc(var(--size) * 7);
+    height: calc(var(--size) * 6 + 150px);
+}
+
+.player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.player-name {
+    font-weight: bold;
+}
+
+.player-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #000;
+}
+
+.player-circle.p1 {
+    background-color: var(--p1);
+}
+
+.player-circle.p2 {
+    background-color: var(--p2);
+}
+
+.progress-bar {
+  height: 5px;
+  width: 0%;
+  transition: width 1s linear;
+  border-radius: 0 0 5px 5px;
+  margin-top: 4px;
+}
+
+.progress-bar.p1 {
+  background-color: var(--p1);
+}
+
+.progress-bar.p2 {
+  background-color: var(--p2);
+}
